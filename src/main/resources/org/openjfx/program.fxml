@@ -1,0 +1,115 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<BorderPane fx:id="mainPane" fx:controller="org.openjfx.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+   <top>
+      <ToolBar>
+         <HBox>
+            <Button text="Get details" onAction="#getEmployeeDetails">
+               <tooltip>
+                  <Tooltip text="Get more info about selected employee"/>
+               </tooltip>
+            </Button>
+            <AnchorPane prefWidth="10"/>
+            <Button text="Add employee" onAction="#addEmployee">
+               <tooltip>
+                  <Tooltip text="Add a new employee"/>
+               </tooltip>
+            </Button>
+         </HBox>
+      </ToolBar>
+   </top>
+
+   <center>
+      <TableView fx:id="employeesTable" prefHeight="500.0">
+         <GridPane.margin>
+            <Insets topRightBottomLeft="10"/>
+         </GridPane.margin>
+         <columns>
+            <TableColumn minWidth="150" text="Name">
+               <cellValueFactory>
+                  <PropertyValueFactory property="name"/>
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="50" text="ID">
+               <cellValueFactory>
+                  <PropertyValueFactory property="employeeID"/>
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="150" text="Email">
+               <cellValueFactory>
+                  <PropertyValueFactory property="email"/>
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="75" text="PIN">
+               <cellValueFactory>
+                  <PropertyValueFactory property="employeePIN"/>
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn minWidth="75" text="Online" fx:id="onlineColumn"/>
+         </columns>
+      </TableView>
+   </center>
+   <!--    <VBox GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="100" alignment="CENTER">-->
+   <!--        <Button text="Get details" onAction="#getEmployeeDetails"/>-->
+   <!--        <AnchorPane prefHeight="10"/>-->
+   <!--        <Button text="Add employee" onAction="#addEmployee"/>-->
+   <!--    </VBox>-->
+   <!--    <HBox GridPane.rowIndex="0" GridPane.columnIndex="2" prefWidth="410" alignment="CENTER"-->
+   <!--          style="-fx-background-color: white;">-->
+   <!--        <GridPane.margin>-->
+   <!--            <Insets topRightBottomLeft="10"/>-->
+   <!--        </GridPane.margin>-->
+   <!--        <VBox alignment="CENTER_LEFT" prefWidth="150">-->
+   <!--            <HBox.margin>-->
+   <!--                <Insets topRightBottomLeft="25"/>-->
+   <!--            </HBox.margin>-->
+   <!--            <Text text="Name: "/>-->
+   <!--            <Text text="Surname: "/>-->
+   <!--            <Text text="Email: "/>-->
+   <!--            <Text text="EmployeeID: "/>-->
+   <!--            <Text text="EmployeePIN: "/>-->
+   <!--&lt;!&ndash;            <AnchorPane prefHeight="40"/>&ndash;&gt;-->
+   <!--&lt;!&ndash;            <Text text="Working hours"/>&ndash;&gt;-->
+   <!--&lt;!&ndash;            <Text text="     This week:"/>&ndash;&gt;-->
+   <!--&lt;!&ndash;            <Text text="     This month:"/>&ndash;&gt;-->
+   <!--&lt;!&ndash;            <Text text="     This year:"/>&ndash;&gt;-->
+   <!--        </VBox>-->
+   <!--        <AnchorPane prefWidth="10"/>-->
+   <!--        <VBox alignment="CENTER_LEFT" prefWidth="250">-->
+   <!--            <HBox.margin>-->
+   <!--                <Insets topRightBottomLeft="25"/>-->
+   <!--            </HBox.margin>-->
+   <!--            <Text fx:id="textName"/>-->
+   <!--            <Text fx:id="textSurname"/>-->
+   <!--            <Text fx:id="textEmail"/>-->
+   <!--            <Text fx:id="textEmployeeID"/>-->
+   <!--            <Text fx:id="textEmployeePIN"/>-->
+   <!--&lt;!&ndash;            <AnchorPane prefHeight="40"/>&ndash;&gt;-->
+   <!--&lt;!&ndash;            <Text text=""/>&ndash;&gt;-->
+   <!--&lt;!&ndash;            <Text text=""/>&ndash;&gt;-->
+   <!--&lt;!&ndash;            <Text text=""/>&ndash;&gt;-->
+   <!--&lt;!&ndash;            <Text text=""/>&ndash;&gt;-->
+   <!--        </VBox>-->
+   <!--        <AnchorPane prefWidth="40"/>-->
+   <!--    </HBox>-->
+</BorderPane>
